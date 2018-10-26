@@ -1,0 +1,32 @@
+<nav>
+    <div class="nav-wrapper grey lighten-1">
+        <a href="#" class="brand-logo center-align"> Linux Journal 2 </a> 
+        
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+           <li><a href="/saved" class="btn btn waves-effect teal">Saved Articles</a></li>\
+           <li><a class="btn btn waves-effect teal scrapeAgain">Scrape again</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="section">
+    <div class="row container">
+        {{#if articles}}
+        {{#each articles}}
+        <div class="col s12 l12">
+
+            <div class="collection hoverable articlebox">
+                <li><a href="https://www.linuxjournal.com/" {{this.link}} class="collection-item header"> 
+                
+                <h5 class="collection-item title"><strong>{{this.title}}</strong></h5></a> 
+                <p class="collection-item body">{{this.body}}</p>
+                <p class="collection-item dates left-align">{{this.date}}</p>
+                <div class="btn right-align saveMe" data-id={{this._id}}>Save me</div>         
+              </li>
+            </div>
+               
+        </div> 
+     {{/each}}
+    </div> 
+</div>
+{{/if}}
